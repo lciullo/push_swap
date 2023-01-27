@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:08:03 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/27 15:47:03 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/27 17:12:14 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,17 @@ static void	get_index(t_list *lst)
 	}
 }
 
+static	int	is_sorted(t_list *lst)
+{
+	while (lst->next)
+	{
+		if (lst->index > lst->next->index)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_elements	items;
@@ -144,6 +155,7 @@ int	main(int argc, char *argv[])
 	get_index(a);
 	list_print(a);
 	b = make_b(b);
+	ft_printf("is sorted %d\n", is_sorted(a));
 	//ft_sort(a, b);
 	free_all(&items);
 	return (0);
