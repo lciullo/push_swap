@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:10:25 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/24 13:10:10 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/27 09:45:06 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	mul_overflow(long long int *nb, long long int a, long long int b)
 	return ((*nb) / a != b);
 }
 
-long long int ft_atoll(char *str)
+long long int	ft_atoll(char *str)
 {
 	long long int	nb;
 	int				sign;

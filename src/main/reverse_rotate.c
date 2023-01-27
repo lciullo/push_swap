@@ -1,38 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/27 09:32:35 by lciullo           #+#    #+#             */
+/*   Updated: 2023/01/27 09:34:04 by lciullo          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../headers/push_swap.h"
 
 void	reverse_rotate(t_list **lst)
 {
-    t_list	*last;
-    t_list  *first;
+	t_list	*last;
+	t_list	*first;
 
 	first = (*lst);
-    last = ft_lstlast(*lst);
+	last = ft_lstlast(*lst);
 	while ((*lst)->next->next != NULL)
 	{
 		(*lst) = (*lst)->next;
 	}		
-	ft_printf("\nafter : \n");
-	list_print(*lst);
 	(*lst)->next = NULL;
-	ft_printf(" last->content %d\n", last->content);
 	(*lst) = last;
 	last->next = first;
-	ft_printf(" last->next %d\n", last->next->content);
 }
 
 void	rr_a(t_list **a)
 {
 	//len < 2 return
-    
 	reverse_rotate(a);
-    return ;
+	return ;
 }
 
 void	rr_b(t_list **b)
 {
 	//len < 2 return
 	reverse_rotate(b);
-    return ;
+	return ;
 }
 
 void	rrr_rotate(t_list **a, t_list **b)

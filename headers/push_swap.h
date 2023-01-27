@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:15:25 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/26 10:26:09 by lisa             ###   ########.fr       */
+/*   Updated: 2023/01/27 09:44:13 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ int		count_minus(t_elements *items);
 
 int		parse_array(t_elements *items);
 
-int     check_dupe(t_list *a);
+int		check_dupe(t_list *a);
 
 #endif

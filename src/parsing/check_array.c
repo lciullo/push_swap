@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_array.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:17:44 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/26 10:25:28 by lisa             ###   ########.fr       */
+/*   Updated: 2023/01/27 14:27:13 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	count_minus(t_elements *items)
 		}
 		row++;
 	}
-	if (minus > 1)
+	if (minus > row)
 	{
 		free_array(items->arr);
 		return (0);
@@ -75,7 +75,7 @@ int	parse_array(t_elements *items)
 	return (1);
 }
 
-int check_dupe(t_list *a)
+int	check_dupe(t_list *a)
 {
 	t_list	*tmp_list;
 	int		tmp;

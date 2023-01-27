@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_print.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:59:51 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/26 18:36:06 by lisa             ###   ########.fr       */
+/*   Updated: 2023/01/27 15:34:16 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	list_print(t_list *lst)
 {
 	while (lst)
 	{
-		ft_printf("[%d]", lst->content);
+		ft_printf("[%d] index = %d\n", lst->content, lst->index);
 		lst = lst->next;
 	}
 	ft_printf("\n");

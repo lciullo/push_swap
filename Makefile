@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+         #
+#    By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 11:00:43 by lciullo           #+#    #+#              #
-#    Updated: 2023/01/26 13:27:50 by lisa             ###   ########.fr        #
+#    Updated: 2023/01/27 14:56:42 by lciullo          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 #---- Final executable ---- #
+
 NAME = push_swap
 
 #---- Directories ----#
@@ -24,6 +25,7 @@ SRCS =  ./src/main/push_swap.c \
 		./src/lists/ft_lstadd_back.c \
 		./src/lists/list_print.c \
 		./src/lists/ft_lstsize.c \
+		./src/lists/make_lists.c \
 		./src/main/swap.c \
 		./src/main/push.c \
 		./src/main/rotate.c \
