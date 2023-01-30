@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_print.c                                       :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 15:59:51 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 12:00:54 by lciullo          ###   ########lyon.fr   */
+/*   Created: 2023/01/30 10:20:45 by lciullo           #+#    #+#             */
+/*   Updated: 2023/01/30 11:55:39 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void	list_print(t_list *lst)
+/*void	ft_sort(t_list **a, t_list **b, t_elements *items)
 {
-	while (lst)
-	{
-		ft_printf("[%d] index = %d\n", lst->content, lst->index);
-		lst = lst->next;
-	}
-	ft_printf("\n");
-}
+	items->a_len = ft_lstsize(*a);
+	ft_printf("a len %d\n", items->a_len);
+	items->b_len = ft_lstsize(*b);
+	return ;
+}*/

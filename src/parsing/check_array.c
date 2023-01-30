@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:17:44 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/27 14:27:13 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 10:08:35 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,26 +71,6 @@ int	parse_array(t_elements *items)
 			col++;
 		}
 		row++;
-	}
-	return (1);
-}
-
-int	check_dupe(t_list *a)
-{
-	t_list	*tmp_list;
-	int		tmp;
-
-	while (a)
-	{
-		tmp = a->content;
-		a = a->next;
-		tmp_list = a;
-		while (tmp_list)
-		{
-			if (tmp == tmp_list->content)
-				return (0);
-			tmp_list = tmp_list->next;
-		}
 	}
 	return (1);
 }

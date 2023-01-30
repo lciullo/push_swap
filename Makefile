@@ -6,7 +6,7 @@
 #    By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 11:00:43 by lciullo           #+#    #+#              #
-#    Updated: 2023/01/27 14:56:42 by lciullo          ###   ########lyon.fr    #
+#    Updated: 2023/01/30 10:25:25 by lciullo          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = push_swap
 SRCS =  ./src/main/push_swap.c \
 		./src/main/init_all.c \
 		./src/parsing/parsing.c \
-		./src/parsing/check_arg.c \
+		./src/parsing/check_list.c \
 		./src/parsing/check_array.c \
 		./src/lists/ft_lstnew.c \
 		./src/lists/ft_lstlast.c \
@@ -26,10 +26,11 @@ SRCS =  ./src/main/push_swap.c \
 		./src/lists/list_print.c \
 		./src/lists/ft_lstsize.c \
 		./src/lists/make_lists.c \
-		./src/main/swap.c \
-		./src/main/push.c \
-		./src/main/rotate.c \
-		./src/main/reverse_rotate.c \
+		./src/sort/swap.c \
+		./src/sort/push.c \
+		./src/sort/rotate.c \
+		./src/sort/reverse_rotate.c \
+		./src/sort/sort.c \
 
 OBJS = ${SRCS:.c=.o}
 

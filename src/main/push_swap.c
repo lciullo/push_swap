@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:08:03 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/27 17:12:14 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 12:23:36 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	free_all(t_elements *items)
 	free_array(items->arr);
 }
 
-/*void	ft_sort(t_list *a, t_list *b)
+/*static void	print_sort(t_list *a, t_list *b)
 {
 	ft_printf("========swap ss ==========\n");
 	ft_printf("a :");
@@ -65,73 +65,6 @@ static void	free_all(t_elements *items)
 	ft_printf("==========");
 }*/
 
-static t_list	*make_b(t_list *b)
-{
-	int	head;
-	int	second;
-	int	third;
-	int	last;
-	int	index;
-
-	head = 45;
-	second = 0;
-	third = -8;
-	last = 100;
-	index = 0;
-	while (index < 4)
-	{
-		if (index == 0)
-			b = ft_lstnew(head);
-		if (index == 1)
-			ft_lstadd_back(&b, ft_lstnew(second));
-		if (index == 2)
-			ft_lstadd_back(&b, ft_lstnew(third));
-		if (index == 3)
-			ft_lstadd_back(&b, ft_lstnew(last));
-		index++;
-	}
-	return (b);
-}
-
-static	unsigned int	count_index(t_list *lst, int content)
-{
-	unsigned int	index;
-
-	index = 0;
-	while (lst)
-	{
-		if (content > lst->content)
-			index++;
-		lst = lst->next;
-	}
-	return (index);
-}
-
-static void	get_index(t_list *lst)
-{
-	t_list			*copy;
-	unsigned int	index;
-
-	index = 0;
-	copy = lst;
-	while (copy)
-	{
-		copy->index = count_index(lst, copy->content);
-		copy = copy->next;
-	}
-}
-
-static	int	is_sorted(t_list *lst)
-{
-	while (lst->next)
-	{
-		if (lst->index > lst->next->index)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_elements	items;
@@ -150,13 +83,9 @@ int	main(int argc, char *argv[])
 	a = make_list(&items);
 	if (!a)
 		return (ft_printf("ERROR\n"), 0);
-	if (check_dupe(a) == 0)
+	if (parsing_list(&a) == 0)
 		return (ft_printf("ERROR\n"), 0);
-	get_index(a);
-	list_print(a);
-	b = make_b(b);
-	ft_printf("is sorted %d\n", is_sorted(a));
-	//ft_sort(a, b);
+	//ft_sort(&a, &b, &items);
 	free_all(&items);
 	return (0);
 }
