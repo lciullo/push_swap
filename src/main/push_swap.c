@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:08:03 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 15:50:41 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 16:39:50 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	main(int argc, char *argv[])
 	if (parsing_list(&a) == 0)
 		return (ft_printf("ERROR\n"), 0);
 	/*b = make_b(b);
-	print_sort(&a, &b);*/
-	//ft_sort(&a, &b, &input);
+	print_sort(&a, &b, &len);*/
+	ft_sort(&a, &b, &len);
 	free_all(&input);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:15:25 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 14:42:34 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 16:22:00 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 //#---- Debug /!\ delete at the end----#
 
-void			print_sort(t_list **a, t_list **b);
+void			print_sort(t_list **a, t_list **b, t_stack *len);
 
 t_list			*make_b(t_list *b);
 

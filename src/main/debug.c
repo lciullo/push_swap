@@ -6,13 +6,13 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:36:09 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 15:50:23 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 16:40:32 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-static void	print_swap(t_list **a, t_list	**b)
+static void	print_swap(t_list **a, t_list	**b, t_stack *len)
 {
 	ft_printf("\n========berfore swap ss ==========\n");
 	ft_printf("a : \n");
@@ -20,7 +20,7 @@ static void	print_swap(t_list **a, t_list	**b)
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("\n======== after swap ss ==========\n");
-	swap_ss(*a, *b);
+	swap_ss(*a, *b, len);
 	ft_printf("a : \n");
 	list_print(*a);
 	ft_printf("b : \n");
@@ -30,19 +30,19 @@ static void	print_swap(t_list **a, t_list	**b)
 	ft_printf("a : \n");
 	list_print(*a);
 	ft_printf("\nafter swap a =====\n");
-	swap_a(*a);
+	swap_a(*a, len);
 	list_print(*a);
 	ft_printf("\n=============================\n");
 	ft_printf("before swap b \n");
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("after swap b =====\n");
-	swap_b(*b);
+	swap_b(*b, len);
 	list_print(*b);
 	return ;
 }
 
-static void	print_push(t_list **a, t_list **b)
+static void	print_push(t_list **a, t_list **b, t_stack *len)
 {
 	ft_printf("\n=====================\n");
 	ft_printf("========push a ==========\n");
@@ -52,8 +52,10 @@ static void	print_push(t_list **a, t_list **b)
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("after push a\n");
-	push_a(a, b);
+	push_a(a, b, len);
+	ft_printf("a : \n");
 	list_print(*a);
+	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("\n=====================\n");
 	ft_printf("\n=====================\n");
@@ -64,14 +66,14 @@ static void	print_push(t_list **a, t_list **b)
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("after push b\n");
-	push_b(b, a);
+	push_b(b, a, len);
 	ft_printf("a : \n");
 	list_print(*a);
 	ft_printf("b : \n");
 	list_print(*b);
 }
 
-static void	print_rotate(t_list **a, t_list **b)
+static void	print_rotate(t_list **a, t_list **b, t_stack *len)
 {
 	ft_printf("\n=====================\n");
 	ft_printf("========rotate a ==========\n");
@@ -79,7 +81,7 @@ static void	print_rotate(t_list **a, t_list **b)
 	ft_printf("a : \n");
 	list_print(*a);
 	ft_printf("after rotate a\n");
-	rotate_a(a);
+	rotate_a(a, len);
 	list_print(*a);
 	ft_printf("\n=====================\n");
 	ft_printf("========rotate b ==========\n");
@@ -87,7 +89,7 @@ static void	print_rotate(t_list **a, t_list **b)
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("after rotate b\n");
-	rotate_b(b);
+	rotate_b(b, len);
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("\n========berfore rotate rr ==========\n");
@@ -96,14 +98,14 @@ static void	print_rotate(t_list **a, t_list **b)
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("\n======== after rotate rr ==========\n");
-	rotate_rr(a, b);
+	rotate_rr(a, b, len);
 	ft_printf("a : \n");
 	list_print(*a);
 	ft_printf("b : \n");
 	list_print(*b);
 }
 
-static void	print_reverse_rotate(t_list **a, t_list **b)
+static void	print_reverse_rotate(t_list **a, t_list **b, t_stack *len)
 {
 	ft_printf("\n=====================\n");
 	ft_printf("======== reverse rotate a ==========\n");
@@ -111,7 +113,7 @@ static void	print_reverse_rotate(t_list **a, t_list **b)
 	ft_printf("a : \n");
 	list_print(*a);
 	ft_printf("after reverse rotate a\n");
-	rvr_a(a);
+	rvr_a(a, len);
 	list_print(*a);
 	ft_printf("\n=====================\n");
 	ft_printf("======== reverse rotate b ==========\n");
@@ -119,7 +121,7 @@ static void	print_reverse_rotate(t_list **a, t_list **b)
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("after reverse rotate b\n");
-	rvr_b(b);
+	rvr_b(b, len);
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("\n========before reverse rotate rr ==========\n");
@@ -128,19 +130,19 @@ static void	print_reverse_rotate(t_list **a, t_list **b)
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("\n======== after reserve rotate rr ==========\n");
-	rrr_rotate(a, b);
+	rrr_rotate(a, b, len);
 	ft_printf("a : \n");
 	list_print(*a);
 	ft_printf("b : \n");
 	list_print(*b);
 }
 
-void	print_sort(t_list **a, t_list **b)
+void	print_sort(t_list **a, t_list **b, t_stack *len)
 {
-	print_swap(a, b);
-	print_push(a, b);
-	print_rotate(a, b);
-	print_reverse_rotate(a, b);
+	print_swap(a, b, len);
+	print_push(a, b, len);
+	print_rotate(a, b, len);
+	print_reverse_rotate(a, b, len);
 }
 
 t_list	*make_b(t_list *b)

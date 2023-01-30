@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:35:09 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 14:04:01 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 16:13:01 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,26 @@ void	rotate(t_list **lst)
 	ft_lstadd_back(lst, tmp);
 }
 
-void	rotate_a(t_list **a)
+void	rotate_a(t_list **a, t_stack *len)
 {
+	if (len->stack_a < 2)
+		return ;
 	rotate(a);
 	return ;
 }
 
-void	rotate_b(t_list **b)
+void	rotate_b(t_list **b, t_stack *len)
 {
+	if (len->stack_b < 2)
+		return ;
 	rotate(b);
 	return ;
 }
 
-void	rotate_rr(t_list **a, t_list **b)
+void	rotate_rr(t_list **a, t_list **b, t_stack *len)
 {
+	if (len->stack_a < 2 || len->stack_b < 2)
+		return ;
 	rotate(a);
 	rotate(b);
 	return ;
