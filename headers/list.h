@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:49:29 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 12:01:09 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 14:47:15 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 
 t_list	*ft_lstlast(t_list *lst);
 
-t_list	*make_list(t_elements *items);
+t_list	*make_list(t_parsing *input);
 
 void	list_print(t_list *lst);
 
@@ -37,19 +37,23 @@ int		ft_lstsize(t_list *lst);
 
 //#---- Functions for sort stack ----#
 
-void	ft_sort(t_list **a, t_list **b, t_elements *items);
+void	ft_sort(t_list **a, t_list **b, t_parsing *input);
 
 //#---- swap ----#
 
-void	ft_swap(t_list *a);
+void	ft_swap(t_list **stack);
 
-void	ft_swap_ss(t_list *a, t_list *b);
+void	swap_ss(t_list *a, t_list *b);
+
+void	swap_a(t_list *a);
+
+void	swap_b(t_list *b);
 
 //#---- push ----#
 
-void	pa(t_list **a, t_list **b);
+void	push_a(t_list **a, t_list **b);
 
-void	pb(t_list *a, t_list *b);
+void	push_b(t_list **b, t_list **a);
 
 //#---- rotate ----#
 
@@ -63,11 +67,11 @@ void	rotate_rr(t_list **a, t_list **b);
 
 //#---- reverse rotate ----#
 
-void	reverse_rotate(t_list **lst);
+void	reverse_rotate(t_list **stack);
 
-void	rr_a(t_list **a);
+void	rvr_a(t_list **a);
 
-void	rr_b(t_list **b);
+void	rvr_b(t_list **b);
 
 void	rrr_rotate(t_list **a, t_list **b);
 

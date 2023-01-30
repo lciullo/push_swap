@@ -6,13 +6,13 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:40:47 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 09:57:44 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 14:12:48 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-int	is_empty_str(t_elements *items)
+int	is_empty_str(t_parsing *input)
 {
 	size_t	i;
 	size_t	space;
@@ -21,89 +21,89 @@ int	is_empty_str(t_elements *items)
 	i = 0;
 	space = 0;
 	new_line = 0;
-	while (items->str[i])
+	while (input->str[i])
 	{
-		if (items->str[i] == ' ')
+		if (input->str[i] == ' ')
 			space++;
-		if (items->str[i] == '\n')
+		if (input->str[i] == '\n')
 			new_line++;
 		i++;
 	}
-	if (ft_strlen(items->str) == (space + new_line))
+	if (ft_strlen(input->str) == (space + new_line))
 		return (0);
 	return (1);
 }
 
-int	is_validated_str(t_elements *items)
+int	is_validated_str(t_parsing *input)
 {
 	size_t	i;
 
 	i = 0;
-	while (items->str[i])
+	while (input->str[i])
 	{
-		if (!(items->str[i] >= '0' && items->str[i] <= '9') \
-			&& items->str[i] != ' ' && items->str[i] != '-' \
-			&& items->str[i] != '\n')
+		if (!(input->str[i] >= '0' && input->str[i] <= '9') \
+			&& input->str[i] != ' ' && input->str[i] != '-' \
+			&& input->str[i] != '\n')
 			return (0);
 		i++;
 	}
-	if (is_empty_str(items) == 0)
+	if (is_empty_str(input) == 0)
 		return (0);
 	return (1);
 }
 
-char	*join_arg(t_elements *items)
+char	*join_arg(t_parsing *input)
 {
 	int		i;
 	char	*str;
 
 	i = 2;
-	str = ft_strdup(items->av[1]);
+	str = ft_strdup(input->av[1]);
 	if (!str)
 		return (NULL);
-	while (i < items->ac)
+	while (i < input->ac)
 	{
 		str = ft_strjoin(str, " ");
-		str = ft_strjoin(str, items->av[i]);
+		str = ft_strjoin(str, input->av[i]);
 		i++;
 	}
 	return (str);
 }
 
-int	make_string(t_elements *items)
+int	make_string(t_parsing *input)
 {
-	if (items->ac == 2)
+	if (input->ac == 2)
 	{
-		items->str = ft_strdup(items->av[1]);
-		if (!items->str)
+		input->str = ft_strdup(input->av[1]);
+		if (!input->str)
 		{
-			free(items->str);
+			free(input->str);
 			return (0);
 		}
 	}
-	else if (items->ac > 2)
+	else if (input->ac > 2)
 	{
-		items->str = join_arg(items);
-		if (!items->str)
+		input->str = join_arg(input);
+		if (!input->str)
 		{
-			free(items->str);
+			free(input->str);
 			return (0);
 		}
 	}
 	return (1);
 }
 
-int	parsing_arg(t_elements *items)
+int	parsing_arg(t_parsing *input)
 {
-	if (make_string(items) == 0)
+	if (make_string(input) == 0)
 		return (0);
-	if (is_validated_str(items) == 0)
-		return (free(items->str), 0);
-	if (make_array(items) == 0)
+	if (is_validated_str(input) == 0)
+		return (free(input->str), 0);
+	if (make_array(input) == 0)
 		return (0);
-	if (parse_array(items) == 0)
+	if (parse_array(input) == 0)
 		return (0);
-	if (count_minus(items) == 0)
+	if (count_minus(input) == 0)
 		return (0);
 	return (1);
 }

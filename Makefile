@@ -6,7 +6,7 @@
 #    By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 11:00:43 by lciullo           #+#    #+#              #
-#    Updated: 2023/01/30 10:25:25 by lciullo          ###   ########lyon.fr    #
+#    Updated: 2023/01/30 14:35:55 by lciullo          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS =  ./src/main/push_swap.c \
 		./src/sort/rotate.c \
 		./src/sort/reverse_rotate.c \
 		./src/sort/sort.c \
+		./src/main/debug.c
 
 OBJS = ${SRCS:.c=.o}
 

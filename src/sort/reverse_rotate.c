@@ -6,46 +6,43 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:32:35 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/27 09:34:04 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 14:08:21 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void	reverse_rotate(t_list **lst)
+void	reverse_rotate(t_list **stack)
 {
 	t_list	*last;
 	t_list	*first;
 
-	first = (*lst);
-	last = ft_lstlast(*lst);
-	while ((*lst)->next->next != NULL)
+	first = (*stack);
+	last = ft_lstlast(*stack);
+	while ((*stack)->next->next != NULL)
 	{
-		(*lst) = (*lst)->next;
+		(*stack) = (*stack)->next;
 	}		
-	(*lst)->next = NULL;
-	(*lst) = last;
+	(*stack)->next = NULL;
+	(*stack) = last;
 	last->next = first;
 }
 
-void	rr_a(t_list **a)
+void	rvr_a(t_list **a)
 {
-	//len < 2 return
 	reverse_rotate(a);
 	return ;
 }
 
-void	rr_b(t_list **b)
+void	rvr_b(t_list **b)
 {
-	//len < 2 return
 	reverse_rotate(b);
 	return ;
 }
 
 void	rrr_rotate(t_list **a, t_list **b)
 {
-	//len < 2 return
-	rr_a(a);
-	rr_b(b);
+	rvr_a(a);
+	rvr_b(b);
 	return ;
 }

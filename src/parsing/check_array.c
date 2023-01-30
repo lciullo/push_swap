@@ -6,25 +6,25 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:17:44 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 10:08:35 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 14:12:48 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-int	make_array(t_elements *items)
+int	make_array(t_parsing *input)
 {
-	items->arr = ft_split(items->str, ' ');
-	if (!items->arr)
+	input->arr = ft_split(input->str, ' ');
+	if (!input->arr)
 	{
-		free_array(items->arr);
-		free(items->str);
+		free_array(input->arr);
+		free(input->str);
 		return (0);
 	}
 	return (1);
 }
 
-int	count_minus(t_elements *items)
+int	count_minus(t_parsing *input)
 {
 	int	row;
 	int	col;
@@ -32,12 +32,12 @@ int	count_minus(t_elements *items)
 
 	row = 0;
 	minus = 0;
-	while (items->arr[row])
+	while (input->arr[row])
 	{
 		col = 0;
-		while (items->arr[row][col])
+		while (input->arr[row][col])
 		{
-			if (items->arr[row][col] == '-')
+			if (input->arr[row][col] == '-')
 				minus++;
 			col++;
 		}
@@ -45,27 +45,27 @@ int	count_minus(t_elements *items)
 	}
 	if (minus > row)
 	{
-		free_array(items->arr);
+		free_array(input->arr);
 		return (0);
 	}
 	return (1);
 }
 
-int	parse_array(t_elements *items)
+int	parse_array(t_parsing *input)
 {
 	int	row;
 	int	col;
 
 	row = 0;
-	while (items->arr[row])
+	while (input->arr[row])
 	{
 		col = 0;
-		while (items->arr[row][col])
+		while (input->arr[row][col])
 		{
-			if (items->arr[row][col] == '-' \
-				&& items->arr[row][col + 1] == '\0')
+			if (input->arr[row][col] == '-' \
+				&& input->arr[row][col + 1] == '\0')
 			{
-				free_array(items->arr);
+				free_array(input->arr);
 				return (0);
 			}
 			col++;

@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:58:54 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 12:23:24 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 14:45:48 by lciullo          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	check_dupe(t_list *a)
 unsigned int	count_index(t_list **lst, int content)
 {
 	unsigned int	index;
+	t_list			*copy;
 
 	index = 0;
-	t_list	*copy;
 	copy = (*lst);
 	while (copy)
 	{
@@ -60,7 +60,6 @@ void	get_index(t_list **lst)
 		copy->index = count_index(lst, copy->content);
 		copy = copy->next;
 	}
-	list_print(*lst);
 	return ;
 }
 
