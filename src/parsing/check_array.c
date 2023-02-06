@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:17:44 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 11:48:20 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/06 13:36:36 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,24 @@ int	count_minus(t_parsing *input)
 	int	minus;
 
 	row = 0;
-	minus = 0;
 	while (input->arr[row])
 	{
 		col = 0;
+		minus = 0;
 		while (input->arr[row][col])
 		{
 			if (input->arr[row][col] == '-')
+			{
 				minus++;
+			}
+			if (minus > 1)
+			{
+				free_array(input->arr);
+				return (0);
+			}
 			col++;
 		}
 		row++;
-	}
-	if (minus > row)
-	{
-		free_array(input->arr);
-		return (0);
 	}
 	return (1);
 }

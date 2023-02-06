@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:20:45 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 15:56:53 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 14:31:13 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ void	ft_sort(t_list **a, t_list **b, t_stack *len)
 	ft_printf("======\n");
 	ft_printf("b : \n");
 	list_print(*b);
+	if (len->stack_a == 2)
+		swap_a(*a);
 	return ;
 }

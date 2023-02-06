@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:52:30 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 11:53:12 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/06 14:18:57 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,24 @@ static	t_list	*first_node(char *line, t_list *a)
 	if (nb > INT_MAX || nb < INT_MIN)
 		return (0);
 	a = ft_lstnew((int)nb);
+	if (!a)
+		return (0);
 	return (a);
 }
 
 static t_list	*other_nodes(char *line, t_list *a)
 {
 	long long int	nb;
+	t_list			*following;
 
 	nb = 0;
 	nb = ft_atoll(line);
 	if (nb > INT_MAX || nb < INT_MIN)
 		return (0);
-	ft_lstadd_back(&a, ft_lstnew((int)nb));
+	following = ft_lstnew((int)nb);
+	if (!a)
+		return (0);
+	ft_lstadd_back(&a, following);
 	return (a);
 }
 
