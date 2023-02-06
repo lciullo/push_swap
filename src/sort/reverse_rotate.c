@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:32:35 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 16:16:09 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 12:47:04 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,21 @@ void	reverse_rotate(t_list **stack)
 	last->next = first;
 }
 
-void	rvr_a(t_list **a, t_stack *len)
+void	rvr_a(t_list **a)
 {
-	if (len->stack_a < 2)
-		return ;
 	reverse_rotate(a);
 	return ;
 }
 
-void	rvr_b(t_list **b, t_stack *len)
+void	rvr_b(t_list **b)
 {
-	if (len->stack_b < 2)
-		return ;
 	reverse_rotate(b);
 	return ;
 }
 
-void	rrr_rotate(t_list **a, t_list **b, t_stack *len)
+void	rrr_rotate(t_list **a, t_list **b)
 {
-	if (len->stack_a < 2 || len->stack_b < 2)
-		return ;
-	rvr_a(a, len);
-	rvr_b(b, len);
+	rvr_a(a);
+	rvr_b(b);
 	return ;
 }

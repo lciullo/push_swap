@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:26:19 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 16:08:45 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 12:42:38 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,21 @@ void	ft_swap(t_list **stack)
 	return ;
 }
 
-void	swap_ss(t_list *a, t_list *b, t_stack *len)
+void	swap_ss(t_list *a, t_list *b)
 {
-	if (len->stack_a < 2 || len->stack_b < 2)
-		return ;
 	ft_swap(&a);
 	ft_swap(&b);
 	return ;
 }
 
-void	swap_a(t_list *a, t_stack *len)
+void	swap_a(t_list *a)
 {
-	if (len->stack_a < 2)
-		return ;
 	ft_swap(&a);
 	return ;
 }
 
-void	swap_b(t_list *b, t_stack *len)
+void	swap_b(t_list *b)
 {
-	if (len->stack_b < 2)
-		return ;
 	ft_swap(&b);
 	return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:36:09 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 16:40:32 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 12:49:42 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	print_swap(t_list **a, t_list	**b, t_stack *len)
 	ft_printf("b : \n");
 	list_print(*b);
 	ft_printf("\n======== after swap ss ==========\n");
-	swap_ss(*a, *b, len);
+	swap_ss(*a, *b);
 	ft_printf("a : \n");
 	list_print(*a);
 	ft_printf("b : \n");
