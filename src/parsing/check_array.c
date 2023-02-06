@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_array.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:17:44 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 14:12:48 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 11:48:20 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	make_array(t_parsing *input)
 		free(input->str);
 		return (0);
 	}
+	free(input->str);
 	return (1);
 }
 

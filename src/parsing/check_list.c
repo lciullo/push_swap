@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:58:54 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 14:45:48 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 11:42:26 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,7 @@ unsigned int	count_index(t_list **lst, int content)
 void	get_index(t_list **lst)
 {
 	t_list			*copy;
-	unsigned int	index;
 
-	index = 0;
 	copy = (*lst);
 	while (copy)
 	{
@@ -80,9 +78,15 @@ int	is_sorted(t_list **lst)
 int	parsing_list(t_list **a)
 {
 	if (check_dupe(*a) == 0)
+	{
+		clear_lsts(a);
 		return (0);
+	}
 	get_index(a);
 	if (is_sorted(a))
+	{
+		clear_lsts(a);
 		return (0);
+	}
 	return (1);
 }

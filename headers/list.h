@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:49:29 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 16:11:58 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 11:38:40 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ t_list	*make_list(t_parsing *input);
 void	list_print(t_list *lst);
 
 int		ft_lstsize(t_list *lst);
-//void    ft_clean_list(t_list *lst);
+
+void    clear_lsts(t_list **lst);
 
 //#---- Functions for sort stack ----#
 

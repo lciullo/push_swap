@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:08:03 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 16:39:50 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 11:56:08 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
-
-static void	free_all(t_parsing *input)
-{
-	free(input->str);
-	free_array(input->arr);
-}
 
 int	main(int argc, char *argv[])
 {
@@ -39,9 +33,7 @@ int	main(int argc, char *argv[])
 		return (ft_printf("ERROR\n"), 0);
 	if (parsing_list(&a) == 0)
 		return (ft_printf("ERROR\n"), 0);
-	/*b = make_b(b);
-	print_sort(&a, &b, &len);*/
 	ft_sort(&a, &b, &len);
-	free_all(&input);
+	clear_lsts(&a);
 	return (0);
 }

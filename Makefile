@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+         #
+#    By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 11:00:43 by lciullo           #+#    #+#              #
-#    Updated: 2023/01/30 14:35:55 by lciullo          ###   ########lyon.fr    #
+#    Updated: 2023/02/06 11:42:24 by lciullo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS =  ./src/main/push_swap.c \
 		./src/parsing/parsing.c \
 		./src/parsing/check_list.c \
 		./src/parsing/check_array.c \
+		./src/lists/clear_lsts.c \
 		./src/lists/ft_lstnew.c \
 		./src/lists/ft_lstlast.c \
 		./src/lists/ft_lstadd_back.c \
@@ -39,8 +40,7 @@ HEAD = ./headers/
 
 # ---- Compiled Rules ---- #
 
-CFLAGS = -Wall -Wextra -Werror 
-#-g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 %.o: %.c ${HEAD} 
 	${CC} ${CFLAGS} -c $< -o $@ -I ${HEAD}

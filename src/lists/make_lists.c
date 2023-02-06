@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_lists.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:52:30 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 14:12:48 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 11:53:12 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,6 @@ t_list	*make_list(t_parsing *input)
 	int				row;
 
 	row = 0;
-	a = malloc(sizeof(t_list));
-	if (!a)
-		return (0);
 	while (input->arr[row])
 	{
 		if (row == 0)
@@ -61,5 +58,6 @@ t_list	*make_list(t_parsing *input)
 		}
 		row++;
 	}
+	free_array(input->arr);
 	return (a);
 }
