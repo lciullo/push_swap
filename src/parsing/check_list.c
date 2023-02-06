@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:58:54 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 11:42:26 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/06 15:00:17 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	is_sorted(t_list **lst)
 	copy = (*lst);
 	while (copy && copy->next)
 	{
-		if (copy->index > copy->next->index)
+		if (copy->index < copy->next->index)
 			return (0);
 		copy = copy->next;
 	}
