@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   norme.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:20:45 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 16:12:20 by lciullo          ###   ########.fr       */
+/*   Created: 2023/02/06 15:59:39 by lciullo           #+#    #+#             */
+/*   Updated: 2023/02/06 16:07:14 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
-/*3 4 5 and big radix*/
 
-static void	sort_3(t_list **a)
+void	clear_lsts(t_list **lst)
 {
-	ft_printf("%d\n", (*a)->content);
-}
+	t_list	*copy;
+	t_list	*following;
 
-void	ft_sort(t_list **a, t_list **b, t_stack *len)
-{
-	len->stack_a = ft_lstsize(*a);
-	len->stack_b = ft_lstsize(*b);
-	if (len->stack_a == 2)
-		swap_a(*a);
-	if (len->stack_a == 3)
-		sort_3(a);
-	list_print(*a);
+	if (!lst)
+		return ;
+	copy = *lst;
+	while (copy)
+	{
+		following = copy->next;
+		free(copy);
+		copy = following;
+	}
+	*lst = NULL;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:49:29 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 12:47:46 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/06 16:16:02 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	list_print(t_list *lst);
 
 int		ft_lstsize(t_list *lst);
 
-void    clear_lsts(t_list **lst);
+void	clear_lsts(t_list **lst);
 
 //#---- Functions for sort stack ----#
 

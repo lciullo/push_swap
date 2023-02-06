@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:39:18 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/20 09:57:37 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 16:14:36 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char	**make_row(char const *s, char c, char **tab, size_t row)
 		{
 			start = i;
 			while (s[i] && s[i] != c)
-					i++;
+				i++;
 			tab[row] = ft_substr(s, start, i - start);
 			if (!(tab[row]))
 			{
@@ -74,7 +74,7 @@ static char	**make_row(char const *s, char c, char **tab, size_t row)
 		else
 			i++;
 	}
-		tab[row] = NULL;
+	tab[row] = NULL;
 	return (tab);
 }
 
