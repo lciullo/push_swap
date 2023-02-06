@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:26:19 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 12:42:38 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/06 14:44:44 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 void	ft_swap(t_list **stack)
 {
 	int	tmp;
+	int	copy;
 
-	tmp = (*stack)->content;
+	tmp = (*stack)->index;
+	(*stack)->index = (*stack)->next->index;
+	(*stack)->next->index = tmp;
+	//debug delete
+	copy = (*stack)->content;
 	(*stack)->content = (*stack)->next->content;
-	(*stack)->next->content = tmp;
+	(*stack)->next->content = copy;
 	return ;
 }
 
