@@ -3,29 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:32:35 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 12:47:04 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/07 19:23:27 by lisa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void	reverse_rotate(t_list **stack)
+void	reverse_rotate(t_list **lst)
 {
-	t_list	*last;
-	t_list	*first;
+	t_list	*copy;
+	t_list	*head;
+	int		tmp;
+	int		pos;
 
-	first = (*stack);
-	last = ft_lstlast(*stack);
-	while ((*stack)->next->next != NULL)
+	pos = 0;
+	tmp = 0;
+	head = *lst;
+	copy = *lst;
+	while (copy)
 	{
-		(*stack) = (*stack)->next;
-	}		
-	(*stack)->next = NULL;
-	(*stack) = last;
-	last->next = first;
+		pos = copy->index;
+		copy->index = tmp;
+		tmp = pos;
+		copy = copy->next;
+	}
+	head->index = pos;
 }
 
 void	rvr_a(t_list **a)
