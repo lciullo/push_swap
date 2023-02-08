@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:49:29 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 16:16:02 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/08 14:22:20 by lisa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ void	clear_lsts(t_list **lst);
 //#---- Functions for sort stack ----#
 
 void	ft_sort(t_list **a, t_list **b, t_stack *len);
+
+void	sort_four(t_list **a, t_list **b);
+
+void 	sort_three(t_list **lst);
 
 //#---- swap ----#
 

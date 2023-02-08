@@ -6,14 +6,14 @@
 /*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:20:45 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/07 19:21:20 by lisa             ###   ########.fr       */
+/*   Updated: 2023/02/08 14:22:02 by lisa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 /*3 4 5 and big radix*/
 
-static void sort_three(t_list **lst)
+void sort_three(t_list **lst)
 {
 	int		a;
 	int		b;
@@ -24,37 +24,43 @@ static void sort_three(t_list **lst)
 	a = copy->index;
 	b = copy->next->index;
 	c = copy->next->next->index; 
-	if (a == 0 && b == 2 && c == 1)
+	if (a < b && a < c && b > c) // a = 0 b = 2 c = 1
 	{
 		rvr_a(&copy);
 		swap_a(copy);
 	}
-	else if (a == 2 && b == 1 && c == 0)
+	else if (c < a && c < b && a > b) // a = 2 b = 1 c =0
 	{
 		rotate_a(&copy);
 		swap_a(copy);
 	}
-	else if (a == 2 && b == 0 && c == 1) //leaks
+	else if (b < a && b < c && a > c) // a = 2 b = 0 c = 1
 		rotate_a(&copy);
-	else if (a == 1 && b == 2 && c == 0) // leaks
+	else if (c < a && c < b && b > a) // a = 1 b = 2 c = 0
 		rvr_a(&copy);
-	else if (a == 1 && b == 0 && c == 2)
+	else if (b < a && b < c && c > a) // a = 1 b - 0 c = 2
 		swap_a(copy);
-	//est ce que je dois free ma copy ?
 }
+
+
 
 void	ft_sort(t_list **a, t_list **b, t_stack *len)
 {
-	t_list	*copy;
+	t_list	*copy_a;
+	t_list	*copy_b;
 
 	len->stack_a = ft_lstsize(*a);
 	len->stack_b = ft_lstsize(*b);
-	copy = *a;
+	copy_a = *a;
+	copy_b = *b;
+	ft_printf("before sort five\n");
 	list_print(*a);
 	if (len->stack_a == 2)
-		swap_a(copy);
+		swap_a(copy_a);
 	if (len->stack_a == 3)
-		sort_three(&copy);
+		sort_three(&copy_a);
+	if (len->stack_a == 4)
+		sort_four(&copy_a, &copy_b);
 	list_print(*a);
 	return ;
 }

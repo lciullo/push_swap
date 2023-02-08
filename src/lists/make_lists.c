@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_lists.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:52:30 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 14:18:57 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/08 11:24:54 by lisa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ static t_list	*other_nodes(char *line, t_list *a)
 	if (nb > INT_MAX || nb < INT_MIN)
 		return (0);
 	following = ft_lstnew((int)nb);
-	if (!a)
-		return (0);
 	ft_lstadd_back(&a, following);
+	if (following == NULL)
+	{
+		clear_lsts(&a);
+		return (0);
+	}
 	return (a);
 }
 
