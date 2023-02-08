@@ -6,7 +6,7 @@
 /*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:20:45 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/08 14:22:02 by lisa             ###   ########.fr       */
+/*   Updated: 2023/02/08 15:04:04 by lisa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,61 @@ void sort_three(t_list **lst)
 		swap_a(copy);
 }
 
+static	void sort_four(t_list **a)
+{
+	int	i;
+	t_list	*b;
 
+	i = 0;
+	b = NULL;
+	while (i < 1)
+	{
+		if ((*a)->index == 0)
+		{
+			push_b(&b, a);
+			i++;
+		}
+		else
+		rotate_a(a);
+	}
+	sort_three(a);
+	push_a(a, &b);
+}
+
+static	void sort_five(t_list **a)
+{
+	int		i;
+	t_list	*b;
+
+	i = 0;
+	b = NULL;
+	while (i < 2)
+	{
+		if ((*a)->index == 0 || (*a)->index == 1)
+		{
+			push_b(&b, a);
+			i++;
+		}
+		else
+		rotate_a(a);
+		
+	}
+	if (b->index == 0)
+		swap_b(b);
+	sort_three(a);
+	push_a(a, &b);
+	push_a(a, &b);
+}
 
 void	ft_sort(t_list **a, t_list **b, t_stack *len)
 {
 	t_list	*copy_a;
-	t_list	*copy_b;
+	//t_list	*copy_b;
 
 	len->stack_a = ft_lstsize(*a);
 	len->stack_b = ft_lstsize(*b);
 	copy_a = *a;
-	copy_b = *b;
+	//copy_b = *b;
 	ft_printf("before sort five\n");
 	list_print(*a);
 	if (len->stack_a == 2)
@@ -60,7 +104,9 @@ void	ft_sort(t_list **a, t_list **b, t_stack *len)
 	if (len->stack_a == 3)
 		sort_three(&copy_a);
 	if (len->stack_a == 4)
-		sort_four(&copy_a, &copy_b);
+		sort_four(&copy_a);
+	if (len->stack_a == 5)
+		sort_five(&copy_a);
 	list_print(*a);
 	return ;
 }

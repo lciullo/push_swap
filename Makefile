@@ -6,7 +6,7 @@
 #    By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 11:00:43 by lciullo           #+#    #+#              #
-#    Updated: 2023/02/08 14:14:28 by lisa             ###   ########.fr        #
+#    Updated: 2023/02/08 15:03:09 by lisa             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRCS =  ./src/main/push_swap.c \
 		./src/sort/rotate.c \
 		./src/sort/reverse_rotate.c \
 		./src/sort/sort.c \
-		./src/sort/sort_4.c \
+		
 #./src/main/debug.c
 
 OBJS = ${SRCS:.c=.o}
