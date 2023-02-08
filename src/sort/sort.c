@@ -6,7 +6,7 @@
 /*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:20:45 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/08 15:04:04 by lisa             ###   ########.fr       */
+/*   Updated: 2023/02/08 16:12:38 by lisa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,8 @@ void	ft_sort(t_list **a, t_list **b, t_stack *len)
 		sort_four(&copy_a);
 	if (len->stack_a == 5)
 		sort_five(&copy_a);
+	if (len->stack_a > 5)
+		radix_sort(a, b, len);
 	list_print(*a);
 	return ;
 }
