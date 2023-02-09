@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:35:09 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/07 19:22:38 by lisa             ###   ########.fr       */
+/*   Updated: 2023/02/09 17:27:34 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ void	rotate(t_list **list)
 void	rotate_a(t_list **a)
 {
 	rotate(a);
+	ft_printf("ra\n");
 	return ;
 }
 
 void	rotate_b(t_list **b)
 {
 	rotate(b);
+	ft_printf("rb\n");
 	return ;
 }
 
@@ -44,5 +46,6 @@ void	rotate_rr(t_list **a, t_list **b)
 {
 	rotate(a);
 	rotate(b);
+	ft_printf("rr\n");
 	return ;
 }

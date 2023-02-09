@@ -6,7 +6,7 @@
 #    By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 11:00:43 by lciullo           #+#    #+#              #
-#    Updated: 2023/02/09 14:02:14 by lciullo          ###   ########.fr        #
+#    Updated: 2023/02/09 16:39:12 by lciullo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,7 @@ HEAD = ./headers/
 
 # ---- Compiled Rules ---- #
 
-CFLAGS = -Wall -Wextra -Werror 
-#-g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 %.o: %.c ${HEAD} 
 	${CC} ${CFLAGS} -c $< -o $@ -I ${HEAD}

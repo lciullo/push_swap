@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:36:10 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/08 10:22:40 by lisa             ###   ########.fr       */
+/*   Updated: 2023/02/09 17:24:10 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	push_a(t_list **a, t_list **b)
 	(*b)->next = *a;
 	*a = *b;
 	*b = tmp;
+	ft_printf("pa\n");
 	return ;
 }
 
@@ -35,5 +36,6 @@ void	push_b(t_list **b, t_list **a)
 	(*a)->next = *b;
 	*b = *a;
 	*a = tmp;
+	ft_printf("pb\n");
 	return ;
 }

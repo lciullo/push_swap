@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:32:35 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/07 19:23:27 by lisa             ###   ########.fr       */
+/*   Updated: 2023/02/09 17:29:39 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,14 @@ void	reverse_rotate(t_list **lst)
 void	rvr_a(t_list **a)
 {
 	reverse_rotate(a);
+	ft_printf("rra\n");
 	return ;
 }
 
 void	rvr_b(t_list **b)
 {
 	reverse_rotate(b);
+	ft_printf("rrb\n");
 	return ;
 }
 
@@ -49,5 +51,6 @@ void	rrr_rotate(t_list **a, t_list **b)
 {
 	rvr_a(a);
 	rvr_b(b);
+	ft_printf("rrr\n");
 	return ;
 }
