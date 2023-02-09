@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   make_lists.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:52:30 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/08 11:24:54 by lisa             ###   ########.fr       */
+/*   Updated: 2023/02/09 15:13:15 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
+#include <stdio.h>
 
 static	t_list	*first_node(char *line, t_list *a)
 {
-	long long int	nb;
+	long int	nb;
 
 	nb = 0;
 	nb = ft_atoll(line);
-	if (nb > INT_MAX || nb < INT_MIN)
+	if (nb == 2147483648)
 		return (0);
 	a = ft_lstnew((int)nb);
 	if (!a)
@@ -28,12 +29,12 @@ static	t_list	*first_node(char *line, t_list *a)
 
 static t_list	*other_nodes(char *line, t_list *a)
 {
-	long long int	nb;
-	t_list			*following;
+	long int	nb;
+	t_list		*following;
 
 	nb = 0;
 	nb = ft_atoll(line);
-	if (nb > INT_MAX || nb < INT_MIN)
+	if (nb == 2147483648)
 		return (0);
 	following = ft_lstnew((int)nb);
 	ft_lstadd_back(&a, following);
@@ -62,8 +63,11 @@ t_list	*make_list(t_parsing *input)
 		else
 		{
 			a = other_nodes(input->arr[row], a);
-			if (!a)
+			if (!a && row == 2)
+			{
+				clear_lsts(&a);
 				return (0);
+			}
 		}
 		row++;
 	}

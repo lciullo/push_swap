@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 15:01:44 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/25 17:14:35 by lisa             ###   ########.fr       */
+/*   Updated: 2023/02/09 13:58:56 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 
 void			free_array(char **arr);
-
-long long int	ft_atoll(char *str);
 
 //# ---- ft_printf functions ---- #
 

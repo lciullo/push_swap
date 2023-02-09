@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:15:25 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/30 16:22:00 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/09 14:53:10 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <limits.h>
 
 # include "../libft/headers/libft.h"
 
@@ -39,13 +41,15 @@ int				parsing_arg(t_parsing *input);
 
 //#---- Parsing arguments ----#
 
-int				make_string(t_parsing *input);
+int				is_validated_str(t_parsing *input);
+
+int				parse_arg(char *str);
+
+int				empty_arg(t_parsing *input);
 
 char			*join_arg(t_parsing *input);
 
-int				is_validated_str(t_parsing *input);
-
-int				is_empty_str(t_parsing *input);
+int				make_string(t_parsing *input);
 
 //#---- Parsing array ----#
 
@@ -58,6 +62,8 @@ int				parse_array(t_parsing *input);
 //#---- Parsing list ----#
 
 int				parsing_list(t_list **a);
+
+long int		ft_atoll(char *str);
 
 unsigned int	count_index(t_list **lst, int content);
 

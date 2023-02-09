@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:10:25 by lciullo           #+#    #+#             */
-/*   Updated: 2023/01/27 09:45:06 by lciullo          ###   ########lyon.fr   */
+/*   Updated: 2023/02/09 14:47:21 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../../headers/push_swap.h"
 
 static	size_t	start_len(char *str)
 {
@@ -21,29 +21,20 @@ static	size_t	start_len(char *str)
 		|| str[i] == '\f' || str[i] == '\n')
 		i++;
 	return (i);
-}	
-
-static int	add_overflow(long long int *nb, long long int a, long long int b)
-{
-	*nb = a + b;
-	if (a > 0 && b > 0 && *nb < 0)
-		return (1);
-	if (a < 0 && b < 0 && *nb > 0)
-		return (1);
-	return (0);
 }
 
-static int	mul_overflow(long long int *nb, long long int a, long long int b)
+static long	int	ft_overflow(long int nb)
 {
-	*nb = a * b;
-	if (!a)
-		return ((*nb) / b != a);
-	return ((*nb) / a != b);
+	if (nb > 2147483647)
+		return (2147483648);
+	if (nb < -2147483648)
+		return (2147483648);
+	return (nb);
 }
 
-long long int	ft_atoll(char *str)
+long int	ft_atoll(char *str)
 {
-	long long int	nb;
+	long int		nb;
 	int				sign;
 	size_t			i;
 
@@ -58,11 +49,10 @@ long long int	ft_atoll(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{	
-		if (mul_overflow(&nb, nb, 10))
-			return (-1 * (sign == 1));
-		if (add_overflow(&nb, nb, (long long int) str[i] - 48))
-			return (-1 * (sign == 1));
+		if (nb != ((nb * 10) + str[i] - '0') / 10)
+			return (2147483648);
+		nb = (nb * 10) + str[i] - '0';
 		i++;
 	}
-	return ((nb * sign));
+	return (ft_overflow(sign * nb));
 }

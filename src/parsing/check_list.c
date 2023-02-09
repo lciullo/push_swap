@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:58:54 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/06 15:19:15 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/09 11:43:39 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	is_sorted(t_list **lst)
 	copy = (*lst);
 	while (copy && copy->next)
 	{
-		if (copy->index > copy->next->index) //si il y a un truc de pas trie un met 1 c'est good 
+		if (copy->index > copy->next->index)
 			return (1);
 		copy = copy->next;
 	}
@@ -80,13 +80,14 @@ int	parsing_list(t_list **a)
 	if (check_dupe(*a) == 0)
 	{
 		clear_lsts(a);
+		ft_printf("ERROR\n");
 		return (0);
 	}
 	get_index(a);
 	if (is_sorted(a) == 0)
 	{
 		clear_lsts(a);
-		return (0); // return (exit(0), 0); plus msg erreur 
+		return (0);
 	}
 	return (1);
 }

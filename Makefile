@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lisa <lisa@student.42.fr>                  +#+  +:+       +#+         #
+#    By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 11:00:43 by lciullo           #+#    #+#              #
-#    Updated: 2023/02/08 15:51:05 by lisa             ###   ########.fr        #
+#    Updated: 2023/02/09 14:02:14 by lciullo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,10 @@ NAME = push_swap
 SRCS =  ./src/main/push_swap.c \
 		./src/main/init_all.c \
 		./src/parsing/parsing.c \
+		./src/parsing/check_arg.c \
 		./src/parsing/check_list.c \
 		./src/parsing/check_array.c \
+		./src/parsing/ft_atoll.c \
 		./src/lists/clear_lsts.c \
 		./src/lists/ft_lstnew.c \
 		./src/lists/ft_lstlast.c \
@@ -42,7 +44,8 @@ HEAD = ./headers/
 
 # ---- Compiled Rules ---- #
 
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror 
+#-g -fsanitize=address
 
 %.o: %.c ${HEAD} 
 	${CC} ${CFLAGS} -c $< -o $@ -I ${HEAD}

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lciullo <lciullo@student.42lyon.fr>        +#+  +:+       +#+         #
+#    By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 15:00:58 by lciullo           #+#    #+#              #
-#    Updated: 2023/01/24 13:22:52 by lciullo          ###   ########lyon.fr    #
+#    Updated: 2023/02/09 14:01:26 by lciullo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ SRCS    =	ft_libft_utils.c \
 			ft_printf.c \
 			ft_printf_utils.c \
 			ft_itoa.c \
-			ft_atoll.c \
 			ft_strjoin.c \
 
 DIR_SRCS = src/
