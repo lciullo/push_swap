@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:58:54 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/09 16:38:56 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/10 15:34:29 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	parsing_list(t_list **a)
 	if (check_dupe(*a) == 0)
 	{
 		clear_lsts(a);
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
 	get_index(a);

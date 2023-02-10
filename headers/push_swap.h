@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:15:25 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/09 14:53:10 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/10 15:25:09 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 void			print_sort(t_list **a, t_list **b, t_stack *len);
 
 t_list			*make_b(t_list *b);
+
+void			ft_putstr_fd(char *s, int fd);
 
 //#---- Get arguments and make array ----#
 
