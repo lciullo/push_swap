@@ -6,7 +6,7 @@
 /*   By: lciullo <lciullo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:17:44 by lciullo           #+#    #+#             */
-/*   Updated: 2023/02/10 15:24:10 by lciullo          ###   ########.fr       */
+/*   Updated: 2023/02/13 16:08:21 by lciullo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	make_array(t_parsing *input)
 	input->arr = ft_split(input->str, ' ');
 	if (!input->arr)
 	{
-		free_array(input->arr);
 		free(input->str);
 		return (0);
 	}
